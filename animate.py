@@ -54,6 +54,19 @@ custom_css = f"""
         margin-bottom: 30px;
     }}
 
+    /* FIX: Make labels (Enter your full name / Select Event) black */
+    div[data-testid="stWidgetLabel"] p {{
+        color: black !important;
+        font-weight: 600 !important;
+        font-size: 18px !important;
+    }}
+    
+    .stTextInput label {{
+        color: black !important;
+        font-weight: 600 !important;
+        font-size: 18px !important;
+    }}
+
     /* Input Field: White BG, Black Text */
     .stTextInput input {{
         background-color: white !important;
@@ -104,7 +117,6 @@ custom_css = f"""
         border: none !important;
     }}
     
-    /* Ensure text remains white even when clicked/active */
     div.stButton > button:active, div.stDownloadButton > button:active {{
         color: white !important;
     }}
@@ -143,8 +155,7 @@ def overlay_name_on_template(name, event_display):
     except:
         font = ImageFont.load_default()
 
-    # Name Color remains #092b2c
-    draw.text((int(w*pos[0]), int(h*pos[1])), name, fill="#092b2c", anchor="mm", font=font)
+    draw.text((int(w*pos[0]), int(h*pos[1])), name, fill="#000000", anchor="mm", font=font)
     return img
 
 def generate_pdf(img_result):
@@ -180,7 +191,6 @@ def main():
                 st.image(img_result, caption="Preview", use_container_width=True)
                 pdf_file = generate_pdf(img_result)
                 
-                # Download Button (will now match Generate button style)
                 st.download_button(
                     label="Download Certificate (PDF)",
                     data=pdf_file.getvalue(),
