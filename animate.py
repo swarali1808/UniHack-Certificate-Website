@@ -20,7 +20,7 @@ def get_base64_of_bin_file(bin_file):
         return None
 
 # Load Assets
-logo_path = "Logo.jpg"
+logo_path = "Logo.png"
 logo = Image.open(logo_path) if os.path.exists(logo_path) else None
 font_path = os.path.abspath("Oregano-Regular.ttf")
 
