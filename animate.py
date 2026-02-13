@@ -28,7 +28,7 @@ font_path = os.path.abspath("Oregano-Regular.ttf")
 bg_base64 = get_base64_of_bin_file("bg.jpg")
 bg_style = f'background-image: url("data:image/jpg;base64,{bg_base64}"); background-size: cover; background-attachment: fixed;' if bg_base64 else "background-color: #f0f2f6;"
 
-st.set_page_config(page_title="DJS NSS Event", page_icon=logo)
+st.set_page_config(page_title="DJS Unicode", page_icon=logo)
 
 # --- STYLING ---
 custom_css = f"""
