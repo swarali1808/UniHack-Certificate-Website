@@ -175,7 +175,7 @@ def main():
     with col1:
         if logo: st.image(logo, width=100)
     with col2:
-        st.markdown('<div class="custom-title">DJS UniCode</div>', unsafe_allow_html=True)
+        st.markdown('<div class="custom-title">DJS Unicode</div>', unsafe_allow_html=True)
     
     user_input = st.text_input("Enter your full name:", placeholder="John Doe").strip().title()
     event_display = st.selectbox("Select Event", list(EVENTS.keys()))
